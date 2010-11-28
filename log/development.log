@@ -1929,3 +1929,2452 @@ Rendered shared/_box (0.6ms)
 Rendered shared/_box (0.5ms)
 Rendered shared/_footer_content (11.6ms)
 Completed in 1700ms (View: 38, DB: 6) | 200 OK [http://127.0.0.1/base/footer_content]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-28 12:25:42) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_box (4.1ms)
+Rendered shared/_login_sidebar (11.7ms)
+Rendered shared/_box (0.6ms)
+Rendered shared/_scripts_and_styles (4.3ms)
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (204.7ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1177ms (View: 463, DB: 1) | 200 OK [http://127.0.0.1/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-11-28 12:25:50) [POST]
+  Parameters: {"remember_me"=>"1", "commit"=>"Log in", "authenticity_token"=>"BSX4XmxMGLEG3tA9SNmwPK9y94JDR7Dq6h3LwH3pSjk=", "login"=>"admin", "password"=>"admin"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'admin') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_box (0.8ms)
+Rendered shared/_login_sidebar (5.2ms)
+Rendered shared/_box (0.9ms)
+Rendered shared/_scripts_and_styles (4.6ms)
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (203.0ms)
+Rendered shared/_messages (0.7ms)
+  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1134ms (View: 462, DB: 2) | 200 OK [http://127.0.0.1/sessions]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-28 12:25:58) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_box (0.6ms)
+Rendered shared/_box (3.7ms)
+Rendered shared/_box (0.9ms)
+Rendered shared/_scripts_and_styles (5.9ms)
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (235.6ms)
+Rendered shared/_messages (0.7ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 729ms (View: 695, DB: 1) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-11-28 12:26:24) [POST]
+  Parameters: {"commit"=>"Sign Up!", "authenticity_token"=>"BSX4XmxMGLEG3tA9SNmwPK9y94JDR7Dq6h3LwH3pSjk=", "inviter_code"=>"", "inviter_id"=>"", "user"=>{"birthday(1i)"=>"1988", "birthday(2i)"=>"9", "password_confirmation"=>"alpelrol", "birthday(3i)"=>"1", "password"=>"alpelrol", "login"=>"alejopelaez", "email"=>"alejopelaezr@gmail.com"}}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'alejopelaezr@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'alejopelaez') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'ca2b4b5b9bdfe83785d73ad6e2814bc30d450a821c39934e9266944ed40386787d89f630ec3c656039dcc02843d81cc049333dab93aaeab0ffd3fccbb4abe066') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'WsXuAQ0KUHlYObNQDaJW') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_slug" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Create (1.3ms)[0m   [0;1mINSERT INTO "users" ("created_at", "activated_at", "notify_comments", "zip", "single_access_token", "last_request_at", "crypted_password", "updated_at", "stylesheet", "login_slug", "perishable_token", "activation_code", "country_id", "role_id", "avatar_id", "gender", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "birthday", "activities_count", "login_count", "description", "vendor", "notify_friend_requests", "featured_writer", "sb_posts_count", "sb_last_seen_at", "last_login_ip", "login", "state_id", "metro_area_id", "notify_community_news", "last_login_at", "profile_public", "email", "view_count") VALUES('2010-11-28 17:26:24', NULL, 't', NULL, 'WsXuAQ0KUHlYObNQDaJW', NULL, 'a802bef571560f608d35590119992baf2d3cfdba', '2010-11-28 17:26:24', NULL, 'alejopelaez', '0bVOv56qnHChYzucWEkE', 'd5808c25dc75d1b9c107a78bb9e2eed9ed75167e', NULL, 3, NULL, NULL, 0, NULL, '7JEeFu7K5Pz6TD2OXN', NULL, 'ca2b4b5b9bdfe83785d73ad6e2814bc30d450a821c39934e9266944ed40386787d89f630ec3c656039dcc02843d81cc049333dab93aaeab0ffd3fccbb4abe066', '1988-09-01', 0, 0, NULL, 'f', 't', 'f', 0, NULL, NULL, 'alejopelaez', NULL, NULL, 't', NULL, 't', 'alejopelaezr@gmail.com', 0)[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "persistence_token" = 'ca2b4b5b9bdfe83785d73ad6e2814bc30d450a821c39934e9266944ed40386787d89f630ec3c656039dcc02843d81cc049333dab93aaeab0ffd3fccbb4abe066', "role_id" = 3, "updated_at" = '2010-11-28 17:26:24', "login_slug" = 'alejopelaez', "created_at" = '2010-11-28 17:26:24', "email" = 'alejopelaezr@gmail.com', "perishable_token" = 'm3zHJv6do6fKAFFvpDK', "login" = 'alejopelaez', "birthday" = '1988-09-01', "activation_code" = 'd5808c25dc75d1b9c107a78bb9e2eed9ed75167e', "single_access_token" = 'WsXuAQ0KUHlYObNQDaJW', "last_login_at" = '2010-11-28 17:26:24', "password_salt" = '7JEeFu7K5Pz6TD2OXN', "crypted_password" = 'a802bef571560f608d35590119992baf2d3cfdba' WHERE "id" = 1[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+Sent mail to alejopelaezr@gmail.com
+
+Date: Sun, 28 Nov 2010 12:26:24 -0500
+From: The directorio Team <support@community.com>
+Reply-To: support@community.com
+To: alejopelaezr@gmail.com
+Subject: [directorio] Please activate your new directorio account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Welcome to directorio, alejopelaez!
+Your account has been created, but you still need to activate it before you can log in.
+Here's the skinny:
+
+  Your username: alejopelaez
+
+Use this link to activate your account:
+
+  http://localhost:3000/users/activate/d5808c25dc75d1b9c107a78bb9e2eed9ed75167e
+
+Can't click the link? Just copy and paste it into your address bar.
+
+Questions? Easy: support@community.com.
+
+Hope to see you hanging out on directorio really soon!
+The directorio team
+Redirected to http://127.0.0.1:3000/alejopelaez/signup_completed
+Completed in 1032ms (DB: 4) | 302 Found [http://127.0.0.1/users]
+
+
+Processing UsersController#signup_completed (for 127.0.0.1 at 2010-11-28 12:26:27) [GET]
+  Parameters: {"id"=>"alejopelaez"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('alejopelaez')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/signup_completed
+Rendered shared/_box (0.6ms)
+Rendered shared/_scripts_and_styles (3.8ms)
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (245.5ms)
+Rendered shared/_messages (0.8ms)
+  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 762ms (View: 601, DB: 3) | 200 OK [http://127.0.0.1/alejopelaez/signup_completed]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-28 12:26:40) [GET]
+
+ActionController::RoutingError (No route matches "/alejopelaez/materias" with {:method=>:get}):
+  /usr/lib/ruby/1.8/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:441:in `recognize'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:436:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:48:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:14:in `run'
+
+Rendering rescues/layout (not_found)
+Loading routes from /home/alejandro/universidad/proyecto2/directorio/vendor/plugins/community_engine/config/desert_routes.rb.
+Loading routes from /home/alejandro/universidad/proyecto2/directorio/vendor/plugins/community_engine/config/desert_routes.rb.
+Loading routes from /home/alejandro/universidad/proyecto2/directorio/vendor/plugins/community_engine/config/desert_routes.rb.
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-28 12:31:53) [GET]
+
+ActionController::RoutingError (No route matches "/alejopelaez/materias" with {:method=>:get}):
+  /usr/lib/ruby/1.8/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:441:in `recognize'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:436:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:48:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:14:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-28 12:31:57) [GET]
+
+ActionController::RoutingError (No route matches "/alejopelaez/materias" with {:method=>:get}):
+  /usr/lib/ruby/1.8/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:441:in `recognize'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:436:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:48:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:14:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-28 12:32:15) [GET]
+  Parameters: {"id"=>"materias"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('materias')) AND (users.activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as [:find_user] rendered_or_redirected.
+Completed in 249ms (DB: 1) | 302 Found [http://127.0.0.1/materias]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-28 12:32:17) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_box (0.5ms)
+Rendered shared/_login_sidebar (3.9ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_scripts_and_styles (4.3ms)
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (211.1ms)
+Rendered shared/_messages (0.8ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 720ms (View: 430, DB: 1) | 200 OK [http://127.0.0.1/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-11-28 12:32:24) [POST]
+  Parameters: {"remember_me"=>"1", "commit"=>"Log in", "authenticity_token"=>"BSX4XmxMGLEG3tA9SNmwPK9y94JDR7Dq6h3LwH3pSjk=", "login"=>"alejopelaezr@gmail.com", "password"=>"alpelrol"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'alejopelaezr@gmail.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_box (0.5ms)
+Rendered shared/_login_sidebar (2.7ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_scripts_and_styles (3.8ms)
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (213.0ms)
+Rendered shared/_messages (0.8ms)
+  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 580ms (View: 433, DB: 2) | 200 OK [http://127.0.0.1/sessions]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-11-28 12:32:40) [POST]
+  Parameters: {"remember_me"=>"1", "commit"=>"Log in", "authenticity_token"=>"BSX4XmxMGLEG3tA9SNmwPK9y94JDR7Dq6h3LwH3pSjk=", "login"=>"alejopelaez", "password"=>"alpelrol"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'alejopelaez') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_box (0.6ms)
+Rendered shared/_login_sidebar (3.6ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_scripts_and_styles (5.0ms)
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (62.4ms)
+Rendered shared/_messages (1.1ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 616ms (View: 296, DB: 3) | 200 OK [http://127.0.0.1/sessions]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-11-28 12:32:56) [POST]
+  Parameters: {"remember_me"=>"1", "commit"=>"Log in", "authenticity_token"=>"BSX4XmxMGLEG3tA9SNmwPK9y94JDR7Dq6h3LwH3pSjk=", "login"=>"alejopelaezr", "password"=>"alpelrol"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'alejopelaezr') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_box (0.5ms)
+Rendered shared/_login_sidebar (2.8ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_scripts_and_styles (3.8ms)
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (211.8ms)
+Rendered shared/_messages (0.8ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 588ms (View: 296, DB: 2) | 200 OK [http://127.0.0.1/sessions]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-28 12:33:01) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_box (0.6ms)
+Rendered shared/_box (0.6ms)
+Rendered shared/_box (0.9ms)
+Rendered shared/_scripts_and_styles (6.6ms)
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (256.0ms)
+Rendered shared/_messages (0.8ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 640ms (View: 607, DB: 1) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-11-28 12:33:13) [POST]
+  Parameters: {"commit"=>"Sign Up!", "authenticity_token"=>"BSX4XmxMGLEG3tA9SNmwPK9y94JDR7Dq6h3LwH3pSjk=", "inviter_code"=>"", "inviter_id"=>"", "user"=>{"birthday(1i)"=>"1985", "birthday(2i)"=>"11", "password_confirmation"=>"alpelrol", "birthday(3i)"=>"28", "password"=>"alpelrol", "login"=>"alejopelaez", "email"=>"alejopelaezr@gmail.com"}}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'alejopelaezr@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'alejopelaez') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '0d83df979ab0ad02e3fb3fd3eec5d7012a055797a3477d65c4d9e242b1301944ebb8488f92e6df3da18c84d4c85d18931cc4c4091a159b5c7313c7d167ad401e') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'JAR1hf4bvkb8fI7zifH8') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_slug" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_box (0.6ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_box (0.8ms)
+Rendered shared/_scripts_and_styles (7.4ms)
+  [4;36;1mCategory Load (0.8ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (235.9ms)
+Rendered shared/_messages (0.3ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 694ms (View: 607, DB: 4) | 200 OK [http://127.0.0.1/users]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-28 12:33:25) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_box (0.6ms)
+Rendered shared/_login_sidebar (3.2ms)
+Rendered shared/_box (1.2ms)
+Rendered shared/_scripts_and_styles (3.7ms)
+  [4;36;1mCategory Load (0.4ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (249.5ms)
+Rendered shared/_messages (0.3ms)
+  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 661ms (View: 518, DB: 1) | 200 OK [http://127.0.0.1/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-11-28 12:33:35) [POST]
+  Parameters: {"remember_me"=>"1", "commit"=>"Log in", "authenticity_token"=>"BSX4XmxMGLEG3tA9SNmwPK9y94JDR7Dq6h3LwH3pSjk=", "login"=>"alejopelaez", "password"=>"alpelrol"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (2.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'alejopelaez') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_box (0.6ms)
+Rendered shared/_login_sidebar (2.9ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_scripts_and_styles (4.1ms)
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (67.2ms)
+Rendered shared/_messages (0.7ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 625ms (View: 300, DB: 3) | 200 OK [http://127.0.0.1/sessions]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-28 12:33:45) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_box (0.6ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_box (1.1ms)
+Rendered shared/_scripts_and_styles (5.6ms)
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (262.0ms)
+Rendered shared/_messages (0.8ms)
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 675ms (View: 638, DB: 1) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-11-28 12:34:07) [POST]
+  Parameters: {"commit"=>"Sign Up!", "authenticity_token"=>"BSX4XmxMGLEG3tA9SNmwPK9y94JDR7Dq6h3LwH3pSjk=", "inviter_code"=>"", "inviter_id"=>"", "user"=>{"birthday(1i)"=>"1985", "birthday(2i)"=>"11", "password_confirmation"=>"admin", "birthday(3i)"=>"28", "password"=>"admin", "login"=>"admin", "email"=>"admin@admin.com"}}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'admin@admin.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '90f5378b8a28b605b33f396130cf82545d9284d9a58aba21c61e812825d0519c17b7a1f99671bae43ec17e8e59cbf7f28d1f24e0d78682483ab3da326bd17067') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'npHPSeFE3fNZ8J1xb8n') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_slug" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_box (0.6ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_box (0.8ms)
+Rendered shared/_scripts_and_styles (5.6ms)
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (261.6ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 701ms (View: 618, DB: 3) | 200 OK [http://127.0.0.1/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-11-28 12:34:20) [POST]
+  Parameters: {"commit"=>"Sign Up!", "authenticity_token"=>"BSX4XmxMGLEG3tA9SNmwPK9y94JDR7Dq6h3LwH3pSjk=", "inviter_code"=>"", "inviter_id"=>"", "user"=>{"birthday(1i)"=>"1985", "birthday(2i)"=>"11", "password_confirmation"=>"admin123", "birthday(3i)"=>"28", "password"=>"admin123", "login"=>"admin", "email"=>"admin@admin.com"}}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'admin@admin.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '6688f88ab5aa41b9dc6823b23a63f888581fbbee751b718d3d87f59f31414ce35925fa5abd4ed2376eb4f6e78b0c7437d88c86b15baebcc741c66e61b41968b3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = '9rfY4Y8qUX7UJoir5ATn') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_slug" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Create (0.8ms)[0m   [0mINSERT INTO "users" ("created_at", "activated_at", "notify_comments", "zip", "single_access_token", "last_request_at", "crypted_password", "updated_at", "stylesheet", "login_slug", "perishable_token", "activation_code", "country_id", "role_id", "avatar_id", "gender", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "birthday", "activities_count", "login_count", "description", "vendor", "notify_friend_requests", "featured_writer", "sb_posts_count", "sb_last_seen_at", "last_login_ip", "login", "state_id", "metro_area_id", "notify_community_news", "last_login_at", "profile_public", "email", "view_count") VALUES('2010-11-28 17:34:20', NULL, 't', NULL, '9rfY4Y8qUX7UJoir5ATn', NULL, '672b2358844ded0ca65d6ebb3b2f340f66004a10', '2010-11-28 17:34:20', NULL, 'admin', 'lKKsjZCtUEr8CETO1Sy', '0d641448283c8f0be2f6bd5281f1eb9a143656ae', NULL, 3, NULL, NULL, 0, NULL, 'AZCBZ6rEacv2hIVRiPjK', NULL, '6688f88ab5aa41b9dc6823b23a63f888581fbbee751b718d3d87f59f31414ce35925fa5abd4ed2376eb4f6e78b0c7437d88c86b15baebcc741c66e61b41968b3', '1985-11-28', 0, 0, NULL, 'f', 't', 'f', 0, NULL, NULL, 'admin', NULL, NULL, 't', NULL, 't', 'admin@admin.com', 0)[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "persistence_token" = '6688f88ab5aa41b9dc6823b23a63f888581fbbee751b718d3d87f59f31414ce35925fa5abd4ed2376eb4f6e78b0c7437d88c86b15baebcc741c66e61b41968b3', "role_id" = 3, "updated_at" = '2010-11-28 17:34:20', "login_slug" = 'admin', "created_at" = '2010-11-28 17:34:20', "email" = 'admin@admin.com', "perishable_token" = 'JaVVsxS4Rn4ajJ2581Zc', "login" = 'admin', "birthday" = '1985-11-28', "activation_code" = '0d641448283c8f0be2f6bd5281f1eb9a143656ae', "single_access_token" = '9rfY4Y8qUX7UJoir5ATn', "last_login_at" = '2010-11-28 17:34:20', "password_salt" = 'AZCBZ6rEacv2hIVRiPjK', "crypted_password" = '672b2358844ded0ca65d6ebb3b2f340f66004a10' WHERE "id" = 2[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 2) AND ("taggings".taggable_type = 'User')) [0m
+Sent mail to admin@admin.com
+
+Date: Sun, 28 Nov 2010 12:34:20 -0500
+From: The directorio Team <support@community.com>
+Reply-To: support@community.com
+To: admin@admin.com
+Subject: [directorio] Please activate your new directorio account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Welcome to directorio, admin!
+Your account has been created, but you still need to activate it before you can log in.
+Here's the skinny:
+
+  Your username: admin
+
+Use this link to activate your account:
+
+  http://localhost:3000/users/activate/0d641448283c8f0be2f6bd5281f1eb9a143656ae
+
+Can't click the link? Just copy and paste it into your address bar.
+
+Questions? Easy: support@community.com.
+
+Hope to see you hanging out on directorio really soon!
+The directorio team
+Redirected to http://127.0.0.1:3000/admin/signup_completed
+Completed in 944ms (DB: 3) | 302 Found [http://127.0.0.1/users]
+
+
+Processing UsersController#signup_completed (for 127.0.0.1 at 2010-11-28 12:34:23) [GET]
+  Parameters: {"id"=>"admin"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('admin')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/signup_completed
+Rendered shared/_box (0.6ms)
+Rendered shared/_scripts_and_styles (4.0ms)
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (251.1ms)
+Rendered shared/_messages (0.8ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 621ms (View: 598, DB: 3) | 200 OK [http://127.0.0.1/admin/signup_completed]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-28 12:34:39) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_box (0.5ms)
+Rendered shared/_login_sidebar (2.7ms)
+Rendered shared/_box (0.7ms)
+Rendered shared/_scripts_and_styles (5.0ms)
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (65.7ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 620ms (View: 475, DB: 1) | 200 OK [http://127.0.0.1/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-11-28 12:34:54) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"BSX4XmxMGLEG3tA9SNmwPK9y94JDR7Dq6h3LwH3pSjk=", "login"=>"admin", "password"=>"admin123"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'admin') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_box (0.5ms)
+Rendered shared/_login_sidebar (3.1ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_scripts_and_styles (3.9ms)
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (255.2ms)
+Rendered shared/_messages (0.8ms)
+  [4;35;1mPage Load (1.0ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 680ms (View: 353, DB: 3) | 200 OK [http://127.0.0.1/sessions]
+
+
+Processing UsersController#resend_activation (for 127.0.0.1 at 2010-11-28 12:35:03) [POST]
+  Parameters: {"authenticity_token"=>"BSX4XmxMGLEG3tA9SNmwPK9y94JDR7Dq6h3LwH3pSjk=", "id"=>"admin"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('admin')) LIMIT 1[0m
+Sent mail to admin@admin.com
+
+Date: Sun, 28 Nov 2010 12:35:03 -0500
+From: The directorio Team <support@community.com>
+Reply-To: support@community.com
+To: admin@admin.com
+Subject: [directorio] Please activate your new directorio account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Welcome to directorio, admin!
+Your account has been created, but you still need to activate it before you can log in.
+Here's the skinny:
+
+  Your username: admin
+
+Use this link to activate your account:
+
+  http://localhost:3000/users/activate/0d641448283c8f0be2f6bd5281f1eb9a143656ae
+
+Can't click the link? Just copy and paste it into your address bar.
+
+Questions? Easy: support@community.com.
+
+Hope to see you hanging out on directorio really soon!
+The directorio team
+Redirected to http://127.0.0.1:3000/login
+Completed in 355ms (DB: 2) | 302 Found [http://127.0.0.1/resend_activation?id=admin]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-28 12:35:05) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_box (0.5ms)
+Rendered shared/_login_sidebar (5.9ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_scripts_and_styles (4.4ms)
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (218.5ms)
+Rendered shared/_messages (0.8ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 609ms (View: 306, DB: 1) | 200 OK [http://127.0.0.1/login]
+
+
+Processing UsersController#resend_activation (for 127.0.0.1 at 2010-11-28 12:35:24) [GET]
+  Parameters: {"id"=>"alejopelaez"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+Rendering template within layouts/application
+Rendering users/resend_activation
+Rendered shared/_box (0.6ms)
+Rendered shared/_login_sidebar (107.9ms)
+Rendered shared/_box (0.6ms)
+Rendered shared/_scripts_and_styles (4.3ms)
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (256.6ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 620ms (View: 606, DB: 1) | 200 OK [http://127.0.0.1/resend_activation?id=alejopelaez]
+
+
+Processing UsersController#resend_activation (for 127.0.0.1 at 2010-11-28 12:35:36) [POST]
+  Parameters: {"commit"=>"Resend my activation e-mail", "authenticity_token"=>"BSX4XmxMGLEG3tA9SNmwPK9y94JDR7Dq6h3LwH3pSjk=", "email"=>"alejopelaezr@gmail.com"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'alejopelaezr@gmail.com') LIMIT 1[0m
+Sent mail to alejopelaezr@gmail.com
+
+Date: Sun, 28 Nov 2010 12:35:36 -0500
+From: The directorio Team <support@community.com>
+Reply-To: support@community.com
+To: alejopelaezr@gmail.com
+Subject: [directorio] Please activate your new directorio account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Welcome to directorio, alejopelaez!
+Your account has been created, but you still need to activate it before you can log in.
+Here's the skinny:
+
+  Your username: alejopelaez
+
+Use this link to activate your account:
+
+  http://localhost:3000/users/activate/d5808c25dc75d1b9c107a78bb9e2eed9ed75167e
+
+Can't click the link? Just copy and paste it into your address bar.
+
+Questions? Easy: support@community.com.
+
+Hope to see you hanging out on directorio really soon!
+The directorio team
+Redirected to http://127.0.0.1:3000/login
+Completed in 349ms (DB: 1) | 302 Found [http://127.0.0.1/resend_activation]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-28 12:35:38) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_box (0.6ms)
+Rendered shared/_login_sidebar (3.8ms)
+Rendered shared/_box (0.6ms)
+Rendered shared/_scripts_and_styles (4.0ms)
+  [4;36;1mCategory Load (2.1ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (59.7ms)
+Rendered shared/_messages (0.7ms)
+  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 606ms (View: 299, DB: 3) | 200 OK [http://127.0.0.1/login]
+
+
+Processing UsersController#resend_activation (for 127.0.0.1 at 2010-11-28 12:36:37) [POST]
+  Parameters: {"commit"=>"Resend my activation e-mail", "authenticity_token"=>"BSX4XmxMGLEG3tA9SNmwPK9y94JDR7Dq6h3LwH3pSjk=", "email"=>"alejopelaezr@gmail.com"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'alejopelaezr@gmail.com') LIMIT 1[0m
+Sent mail to alejopelaezr@gmail.com
+
+Date: Sun, 28 Nov 2010 12:36:37 -0500
+From: The directorio Team <support@community.com>
+Reply-To: support@community.com
+To: alejopelaezr@gmail.com
+Subject: [directorio] Please activate your new directorio account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Welcome to directorio, alejopelaez!
+Your account has been created, but you still need to activate it before you can log in.
+Here's the skinny:
+
+  Your username: alejopelaez
+
+Use this link to activate your account:
+
+  http://localhost:3000/users/activate/d5808c25dc75d1b9c107a78bb9e2eed9ed75167e
+
+Can't click the link? Just copy and paste it into your address bar.
+
+Questions? Easy: support@community.com.
+
+Hope to see you hanging out on directorio really soon!
+The directorio team
+Redirected to http://127.0.0.1:3000/login
+Completed in 213ms (DB: 1) | 302 Found [http://127.0.0.1/resend_activation]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-28 12:36:39) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_box (0.5ms)
+Rendered shared/_login_sidebar (3.8ms)
+Rendered shared/_box (0.8ms)
+Rendered shared/_scripts_and_styles (3.8ms)
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (227.6ms)
+Rendered shared/_messages (0.8ms)
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 648ms (View: 358, DB: 1) | 200 OK [http://127.0.0.1/login]
+
+
+Processing UsersController#activate (for 127.0.0.1 at 2010-11-28 12:37:08) [GET]
+  Parameters: {"id"=>"d5808c25dc75d1b9c107a78bb9e2eed9ed75167e"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."activation_code" = 'd5808c25dc75d1b9c107a78bb9e2eed9ed75167e') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_slug" = 'alejopelaez' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 17:37:08', "perishable_token" = 'eyGeRbAdx4Nw0TSULRUs', "activated_at" = '2010-11-28 17:37:08', "activation_code" = NULL WHERE "id" = 1[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+Sent mail to alejopelaezr@gmail.com
+
+Date: Sun, 28 Nov 2010 12:37:08 -0500
+From: The directorio Team <support@community.com>
+Reply-To: support@community.com
+To: alejopelaezr@gmail.com
+Subject: [directorio] Your directorio account has been activated!
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hi alejopelaez, 
+Just a quick note to let you know your directorio account has been activated. There's always a lot going on at directorio, so come check out what's new:
+
+http://localhost:3000/
+
+* As a directorio member, you'll receive occasional e-mails from us (with news, contest announcements, and updates on the site). If you don't want them, you can change your e-mail preferences here:
+
+http://localhost:3000/alejopelaez/edit_account
+
+Thanks for joining directorio!
+The directorio Team
+  [4;35;1mUser Update (119.9ms)[0m   [0mUPDATE "users" SET sb_last_seen_at = '2010-11-28 17:37:08' WHERE (id = 1) [0m
+  [4;36;1mUser Update (1.8ms)[0m   [0;1mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2010-11-28 17:37:08', "perishable_token" = 'c2xg0zIo9T5J1kK0', "last_request_at" = '2010-11-28 17:37:08', "sb_last_seen_at" = '2010-11-28 17:37:08', "last_login_at" = NULL, "current_login_at" = '2010-11-28 17:37:08' WHERE "id" = 1[0m
+Sent mail to alejopelaezr@gmail.com
+
+Date: Sun, 28 Nov 2010 12:37:08 -0500
+From: The directorio Team <support@community.com>
+Reply-To: support@community.com
+To: alejopelaezr@gmail.com
+Subject: [directorio] Your directorio account has been activated!
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hi alejopelaez, 
+Just a quick note to let you know your directorio account has been activated. There's always a lot going on at directorio, so come check out what's new:
+
+http://localhost:3000/
+
+* As a directorio member, you'll receive occasional e-mails from us (with news, contest announcements, and updates on the site). If you don't want them, you can change your e-mail preferences here:
+
+http://localhost:3000/alejopelaez/edit_account
+
+Thanks for joining directorio!
+The directorio Team
+  [4;35;1mActivity Create (0.5ms)[0m   [0mINSERT INTO "activities" ("created_at", "action", "user_id", "item_id", "item_type") VALUES('2010-11-28 17:37:09', 'joined_the_site', 1, NULL, NULL)[0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "activities" WHERE (user_id = 1) [0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 17:37:09', "perishable_token" = 'rmgrdWb8Smeeqa4rBnaM', "activities_count" = 1 WHERE "id" = 1[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+Redirected to http://localhost:3000/alejopelaez/welcome_photo
+Completed in 1530ms (DB: 127) | 302 Found [http://localhost/users/activate/d5808c25dc75d1b9c107a78bb9e2eed9ed75167e]
+
+
+Processing UsersController#welcome_photo (for 127.0.0.1 at 2010-11-28 12:37:11) [GET]
+  Parameters: {"id"=>"alejopelaez"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (1.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 17:37:11', "perishable_token" = '7pMy7Gd0C36gNCq8APDi', "last_request_at" = '2010-11-28 17:37:11' WHERE "id" = 1[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;35;1mUser Load (4.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('alejopelaez')) LIMIT 1[0m
+  [4;36;1mRole Load (1.1ms)[0m   [0;1mSELECT * FROM "roles" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('alejopelaez')) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/welcome_photo
+Rendered shared/_box (0.6ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_scripts_and_styles (13.9ms)
+Rendered shared/_user_menu (18.0ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (254.4ms)
+Rendered shared/_messages (0.8ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1199ms (View: 481, DB: 10) | 200 OK [http://localhost/alejopelaez/welcome_photo]
+
+
+Processing UsersController#show to ico (for 127.0.0.1 at 2010-11-28 12:37:15) [GET]
+  Parameters: {"id"=>"favicon"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('favicon')) AND (users.activated_at IS NOT NULL) LIMIT 1[0m
+Filter chain halted as [:find_user] rendered_or_redirected.
+Completed in 573ms (View: 195, DB: 1) | 406 Not Acceptable [http://localhost/favicon.ico]
+
+
+Processing UsersController#show to ico (for 127.0.0.1 at 2010-11-28 12:37:18) [GET]
+  Parameters: {"id"=>"favicon"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('favicon')) AND (users.activated_at IS NOT NULL) LIMIT 1[0m
+Filter chain halted as [:find_user] rendered_or_redirected.
+Completed in 156ms (View: 54, DB: 1) | 406 Not Acceptable [http://localhost/favicon.ico]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-28 12:37:26) [GET]
+  Parameters: {"id"=>"materias"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('materias')) AND (users.activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:find_user] rendered_or_redirected.
+Completed in 261ms (DB: 1) | 302 Found [http://localhost/materias]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-28 12:37:29) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 17:37:29', "perishable_token" = 'owZhofRhc1eWuaPbKOlu', "last_request_at" = '2010-11-28 17:37:29' WHERE "id" = 1[0m
+  [4;36;1mTag Load (2.9ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+Redirected to http://localhost:3000/alejopelaez
+Completed in 558ms (DB: 5) | 302 Found [http://localhost/login]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-28 12:37:31) [GET]
+  Parameters: {"id"=>"alejopelaez"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('alejopelaez')) AND (users.activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 17:37:32', "perishable_token" = 'cr8tgrpph4C2t8aV37yr', "last_request_at" = '2010-11-28 17:37:32' WHERE "id" = 1[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "friendships" WHERE ("friendships".user_id = 1 AND (friendship_status_id = 2)) [0m
+  [4;36;1mFriendship Load (0.6ms)[0m   [0;1mSELECT * FROM "friendships" WHERE ("friendships".user_id = 1 AND (friendship_status_id = 2)) LIMIT 5[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "friendships" WHERE ("friendships".user_id = 1 AND (initiator = 'f' AND friendship_status_id = 1)) [0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".commentable_id = 1 AND "comments".commentable_type = 'User') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE (recipient_id = 1 AND commentable_type = 'Photo') ORDER BY created_at DESC[0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE (user_id = 1) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 1) AND (published_as = 'live') ORDER BY published_at DESC, published_at desc LIMIT 2[0m
+  [4;36;1mClipping Load (1.3ms)[0m   [0;1mSELECT * FROM "clippings" WHERE ("clippings".user_id = 1) ORDER BY created_at desc LIMIT 5[0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".user_id = 1) ORDER BY created_at desc LIMIT 5[0m
+  [4;36;1mActivity Load (0.6ms)[0m   [0;1mSELECT * FROM "activities" WHERE (activities.user_id in (1)) ORDER BY activities.created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;36;1mRole Load (0.7ms)[0m   [0;1mSELECT * FROM "roles" [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "offerings" WHERE ("offerings".user_id = 1) [0m
+Rendered shared/_box (0.8ms)
+Rendered users/_profile_user_info_sidebar (359.2ms)
+Rendered shared/_box (1.0ms)
+Rendered shared/_box (0.6ms)
+Rendered shared/_box (0.5ms)
+Rendered comments/_comment_form (31.1ms)
+Rendered shared/_box (0.7ms)
+Rendered shared/_scripts_and_styles (6.5ms)
+Rendered shared/_user_menu (3.0ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.8ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (225.4ms)
+Rendered shared/_messages (0.8ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1694ms (View: 945, DB: 13) | 200 OK [http://localhost/alejopelaez]
+
+
+Processing BaseController#footer_content (for 127.0.0.1 at 2010-11-28 12:37:36) [POST]
+  Parameters: {"authenticity_token"=>"qgr8NF3cBsBI9FWp6qtP8KNCrdawqwtDHur6ehmZIos="}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mClipping Load (0.3ms)[0m   [0mSELECT * FROM "clippings" WHERE (created_at > '2010-11-21 17:37:36') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mPhoto Load (0.4ms)[0m   [0;1mSELECT * FROM "photos" WHERE (photos.created_at > '2010-11-21 17:37:36' AND photos.parent_id IS NULL) ORDER BY photos.created_at DESC LIMIT 10[0m
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE (created_at > '2010-11-14 17:37:37') ORDER BY created_at DESC LIMIT 13[0m
+  [4;36;1mTag Load (0.4ms)[0m   [0;1mSELECT tags.id, tags.name, count(*) AS count 
+ FROM taggings, tags 
+ WHERE tags.id = taggings.tag_id GROUP BY tags.id, tags.name ORDER BY count DESC LIMIT 30[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(activities.id) AS count_activities_id FROM "activities" LEFT JOIN users ON users.id = activities.user_id WHERE (users.activated_at IS NOT NULL) [0m
+  [4;36;1mActivity Load (3.2ms)[0m   [0;1mSELECT activities.* FROM "activities" LEFT JOIN users ON users.id = activities.user_id WHERE (users.activated_at IS NOT NULL) ORDER BY activities.created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 17:37:37', "perishable_token" = 'kc8XinOaBVkRXV3SPd7N', "last_request_at" = '2010-11-28 17:37:37' WHERE "id" = 1[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;36;1mRole Load (1.2ms)[0m   [0;1mSELECT * FROM "roles" [0m
+  [4;35;1mUser Load (2.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered activities/_activity (569.7ms)
+Rendered shared/_box (1.2ms)
+Rendered shared/_box (14.5ms)
+Rendered shared/_footer_content (620.9ms)
+Completed in 1308ms (View: 755, DB: 12) | 200 OK [http://localhost/base/footer_content]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-28 12:37:43) [GET]
+  Parameters: {"id"=>"sdasd"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('sdasd')) AND (users.activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:find_user] rendered_or_redirected.
+Completed in 113ms (DB: 1) | 302 Found [http://localhost/sdasd]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-28 12:37:45) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 17:37:46', "perishable_token" = '4QaUJKqMVOZvoWedr5W', "last_request_at" = '2010-11-28 17:37:46' WHERE "id" = 1[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+Redirected to http://localhost:3000/alejopelaez
+Completed in 584ms (DB: 2) | 302 Found [http://localhost/login]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-28 12:37:48) [GET]
+  Parameters: {"id"=>"alejopelaez"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('alejopelaez')) AND (users.activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 17:37:48', "perishable_token" = 'ptLJBVOAHGiCq0g8TgCG', "last_request_at" = '2010-11-28 17:37:48' WHERE "id" = 1[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "friendships" WHERE ("friendships".user_id = 1 AND (friendship_status_id = 2)) [0m
+  [4;35;1mFriendship Load (0.7ms)[0m   [0mSELECT * FROM "friendships" WHERE ("friendships".user_id = 1 AND (friendship_status_id = 2)) LIMIT 5[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "friendships" WHERE ("friendships".user_id = 1 AND (initiator = 'f' AND friendship_status_id = 1)) [0m
+  [4;35;1mComment Load (0.8ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 1 AND "comments".commentable_type = 'User') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mComment Load (1.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE (recipient_id = 1 AND commentable_type = 'Photo') ORDER BY created_at DESC[0m
+  [4;35;1mComment Load (0.7ms)[0m   [0mSELECT * FROM "comments" WHERE (user_id = 1) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPost Load (0.8ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 1) AND (published_as = 'live') ORDER BY published_at DESC, published_at desc LIMIT 2[0m
+  [4;35;1mClipping Load (0.6ms)[0m   [0mSELECT * FROM "clippings" WHERE ("clippings".user_id = 1) ORDER BY created_at desc LIMIT 5[0m
+  [4;36;1mPhoto Load (0.7ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".user_id = 1) ORDER BY created_at desc LIMIT 5[0m
+  [4;35;1mActivity Load (0.6ms)[0m   [0mSELECT * FROM "activities" WHERE (activities.user_id in (1)) ORDER BY activities.created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "offerings" WHERE ("offerings".user_id = 1) [0m
+Rendered shared/_box (1.2ms)
+Rendered users/_profile_user_info_sidebar (332.1ms)
+Rendered shared/_box (0.6ms)
+Rendered shared/_box (0.6ms)
+Rendered shared/_box (0.5ms)
+Rendered comments/_comment_form (17.1ms)
+Rendered shared/_box (0.7ms)
+Rendered shared/_scripts_and_styles (15.9ms)
+Rendered shared/_user_menu (3.2ms)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.7ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (68.4ms)
+Rendered shared/_messages (0.8ms)
+  [4;35;1mPage Load (1.2ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1625ms (View: 833, DB: 15) | 200 OK [http://localhost/alejopelaez]
+
+
+Processing BaseController#footer_content (for 127.0.0.1 at 2010-11-28 12:37:54) [POST]
+  Parameters: {"authenticity_token"=>"qgr8NF3cBsBI9FWp6qtP8KNCrdawqwtDHur6ehmZIos="}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mClipping Load (0.3ms)[0m   [0;1mSELECT * FROM "clippings" WHERE (created_at > '2010-11-21 17:37:54') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE (photos.created_at > '2010-11-21 17:37:53' AND photos.parent_id IS NULL) ORDER BY photos.created_at DESC LIMIT 10[0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE (created_at > '2010-11-14 17:37:54') ORDER BY created_at DESC LIMIT 13[0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT tags.id, tags.name, count(*) AS count 
+ FROM taggings, tags 
+ WHERE tags.id = taggings.tag_id GROUP BY tags.id, tags.name ORDER BY count DESC LIMIT 30[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(activities.id) AS count_activities_id FROM "activities" LEFT JOIN users ON users.id = activities.user_id WHERE (users.activated_at IS NOT NULL) [0m
+  [4;35;1mActivity Load (0.6ms)[0m   [0mSELECT activities.* FROM "activities" LEFT JOIN users ON users.id = activities.user_id WHERE (users.activated_at IS NOT NULL) ORDER BY activities.created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;36;1mUser Load (5.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 17:37:55', "perishable_token" = 'zhGufGH1gZ2LMv8hj3', "last_request_at" = '2010-11-28 17:37:55' WHERE "id" = 1[0m
+  [4;36;1mTag Load (3.8ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" [0m
+  [4;36;1mUser Load (5.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered activities/_activity (833.1ms)
+Rendered shared/_box (0.7ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_footer_content (853.5ms)
+Completed in 1980ms (View: 1429, DB: 18) | 200 OK [http://localhost/base/footer_content]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-28 12:38:02) [GET]
+  Parameters: {"id"=>"materias"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('materias')) AND (users.activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:find_user] rendered_or_redirected.
+Completed in 108ms (DB: 1) | 302 Found [http://localhost/materias]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-28 12:38:04) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 17:38:04', "perishable_token" = 'LpWb6uPOLkr9g8C1dMpf', "last_request_at" = '2010-11-28 17:38:04' WHERE "id" = 1[0m
+  [4;36;1mTag Load (0.4ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+Redirected to http://localhost:3000/alejopelaez
+Completed in 444ms (DB: 2) | 302 Found [http://localhost/login]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-28 12:38:07) [GET]
+  Parameters: {"id"=>"alejopelaez"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (2.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('alejopelaez')) AND (users.activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (2.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.9ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 17:38:07', "perishable_token" = 'Mtcm7dY14aIKnpF7kRw0', "last_request_at" = '2010-11-28 17:38:07' WHERE "id" = 1[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "friendships" WHERE ("friendships".user_id = 1 AND (friendship_status_id = 2)) [0m
+  [4;36;1mFriendship Load (0.3ms)[0m   [0;1mSELECT * FROM "friendships" WHERE ("friendships".user_id = 1 AND (friendship_status_id = 2)) LIMIT 5[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "friendships" WHERE ("friendships".user_id = 1 AND (initiator = 'f' AND friendship_status_id = 1)) [0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".commentable_id = 1 AND "comments".commentable_type = 'User') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mComment Load (0.7ms)[0m   [0mSELECT * FROM "comments" WHERE (recipient_id = 1 AND commentable_type = 'Photo') ORDER BY created_at DESC[0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE (user_id = 1) ORDER BY created_at DESC LIMIT 5[0m
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 1) AND (published_as = 'live') ORDER BY published_at DESC, published_at desc LIMIT 2[0m
+  [4;36;1mClipping Load (0.3ms)[0m   [0;1mSELECT * FROM "clippings" WHERE ("clippings".user_id = 1) ORDER BY created_at desc LIMIT 5[0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos".user_id = 1) ORDER BY created_at desc LIMIT 5[0m
+  [4;36;1mActivity Load (3.1ms)[0m   [0;1mSELECT * FROM "activities" WHERE (activities.user_id in (1)) ORDER BY activities.created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "offerings" WHERE ("offerings".user_id = 1) [0m
+Rendered shared/_box (0.7ms)
+Rendered users/_profile_user_info_sidebar (356.9ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_box (1.0ms)
+Rendered shared/_box (0.5ms)
+Rendered comments/_comment_form (7.6ms)
+Rendered shared/_box (0.6ms)
+Rendered shared/_scripts_and_styles (7.8ms)
+Rendered shared/_user_menu (2.9ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (232.1ms)
+Rendered shared/_messages (1.2ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1608ms (View: 840, DB: 17) | 200 OK [http://localhost/alejopelaez]
+
+
+Processing BaseController#footer_content (for 127.0.0.1 at 2010-11-28 12:38:12) [POST]
+  Parameters: {"authenticity_token"=>"qgr8NF3cBsBI9FWp6qtP8KNCrdawqwtDHur6ehmZIos="}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mClipping Load (0.4ms)[0m   [0mSELECT * FROM "clippings" WHERE (created_at > '2010-11-21 17:38:12') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mPhoto Load (0.5ms)[0m   [0;1mSELECT * FROM "photos" WHERE (photos.created_at > '2010-11-21 17:38:12' AND photos.parent_id IS NULL) ORDER BY photos.created_at DESC LIMIT 10[0m
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE (created_at > '2010-11-14 17:38:12') ORDER BY created_at DESC LIMIT 13[0m
+  [4;36;1mTag Load (0.4ms)[0m   [0;1mSELECT tags.id, tags.name, count(*) AS count 
+ FROM taggings, tags 
+ WHERE tags.id = taggings.tag_id GROUP BY tags.id, tags.name ORDER BY count DESC LIMIT 30[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(activities.id) AS count_activities_id FROM "activities" LEFT JOIN users ON users.id = activities.user_id WHERE (users.activated_at IS NOT NULL) [0m
+  [4;36;1mActivity Load (0.6ms)[0m   [0;1mSELECT activities.* FROM "activities" LEFT JOIN users ON users.id = activities.user_id WHERE (users.activated_at IS NOT NULL) ORDER BY activities.created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 17:38:13', "perishable_token" = '0S6g4F41zx16GWzsJdIu', "last_request_at" = '2010-11-28 17:38:13' WHERE "id" = 1[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;36;1mRole Load (0.7ms)[0m   [0;1mSELECT * FROM "roles" [0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered activities/_activity (662.1ms)
+Rendered shared/_box (0.8ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_footer_content (670.2ms)
+Completed in 1169ms (View: 781, DB: 7) | 200 OK [http://localhost/base/footer_content]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-28 12:39:14) [GET]
+
+ActionController::RoutingError (No route matches "/materias/show" with {:method=>:get}):
+  /usr/lib/ruby/1.8/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:441:in `recognize'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:436:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:48:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:14:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-28 12:39:33) [GET]
+
+ActionController::RoutingError (No route matches "/materias/show/1" with {:method=>:get}):
+  /usr/lib/ruby/1.8/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:441:in `recognize'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:436:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:48:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:14:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-28 12:39:43) [GET]
+
+ActionController::RoutingError (No route matches "/materias/index" with {:method=>:get}):
+  /usr/lib/ruby/1.8/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:441:in `recognize'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:436:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:48:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:14:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-28 12:40:15) [GET]
+
+ActionController::RoutingError (No route matches "/materias/index" with {:method=>:get}):
+  /usr/lib/ruby/1.8/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:441:in `recognize'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:436:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:48:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:14:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-28 12:40:19) [GET]
+  Parameters: {"id"=>"materias"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('materias')) AND (users.activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:find_user] rendered_or_redirected.
+Completed in 258ms (DB: 1) | 302 Found [http://localhost/materias/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-28 12:40:21) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 17:40:21', "perishable_token" = 'IXvb22HllS7ukbBYw1SC', "last_request_at" = '2010-11-28 17:40:21' WHERE "id" = 1[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+Redirected to http://localhost:3000/alejopelaez
+Completed in 558ms (DB: 2) | 302 Found [http://localhost/login]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-28 12:40:24) [GET]
+  Parameters: {"id"=>"alejopelaez"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('alejopelaez')) AND (users.activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 17:40:24', "perishable_token" = 'RcG4jKnyqjx4vyhBcUnD', "last_request_at" = '2010-11-28 17:40:24' WHERE "id" = 1[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "friendships" WHERE ("friendships".user_id = 1 AND (friendship_status_id = 2)) [0m
+  [4;35;1mFriendship Load (0.3ms)[0m   [0mSELECT * FROM "friendships" WHERE ("friendships".user_id = 1 AND (friendship_status_id = 2)) LIMIT 5[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "friendships" WHERE ("friendships".user_id = 1 AND (initiator = 'f' AND friendship_status_id = 1)) [0m
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 1 AND "comments".commentable_type = 'User') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE (recipient_id = 1 AND commentable_type = 'Photo') ORDER BY created_at DESC[0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE (user_id = 1) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 1) AND (published_as = 'live') ORDER BY published_at DESC, published_at desc LIMIT 2[0m
+  [4;35;1mClipping Load (0.3ms)[0m   [0mSELECT * FROM "clippings" WHERE ("clippings".user_id = 1) ORDER BY created_at desc LIMIT 5[0m
+  [4;36;1mPhoto Load (0.4ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".user_id = 1) ORDER BY created_at desc LIMIT 5[0m
+  [4;35;1mActivity Load (0.6ms)[0m   [0mSELECT * FROM "activities" WHERE (activities.user_id in (1)) ORDER BY activities.created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "offerings" WHERE ("offerings".user_id = 1) [0m
+Rendered shared/_box (0.7ms)
+Rendered users/_profile_user_info_sidebar (317.3ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_box (0.4ms)
+Rendered comments/_comment_form (6.9ms)
+Rendered shared/_box (0.6ms)
+Rendered shared/_scripts_and_styles (6.4ms)
+Rendered shared/_user_menu (5.7ms)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (227.9ms)
+Rendered shared/_messages (0.8ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1434ms (View: 782, DB: 11) | 200 OK [http://localhost/alejopelaez]
+
+
+Processing BaseController#footer_content (for 127.0.0.1 at 2010-11-28 12:40:29) [POST]
+  Parameters: {"authenticity_token"=>"qgr8NF3cBsBI9FWp6qtP8KNCrdawqwtDHur6ehmZIos="}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mClipping Load (0.3ms)[0m   [0;1mSELECT * FROM "clippings" WHERE (created_at > '2010-11-21 17:40:29') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE (photos.created_at > '2010-11-21 17:40:28' AND photos.parent_id IS NULL) ORDER BY photos.created_at DESC LIMIT 10[0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE (created_at > '2010-11-14 17:40:29') ORDER BY created_at DESC LIMIT 13[0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT tags.id, tags.name, count(*) AS count 
+ FROM taggings, tags 
+ WHERE tags.id = taggings.tag_id GROUP BY tags.id, tags.name ORDER BY count DESC LIMIT 30[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(activities.id) AS count_activities_id FROM "activities" LEFT JOIN users ON users.id = activities.user_id WHERE (users.activated_at IS NOT NULL) [0m
+  [4;35;1mActivity Load (0.9ms)[0m   [0mSELECT activities.* FROM "activities" LEFT JOIN users ON users.id = activities.user_id WHERE (users.activated_at IS NOT NULL) ORDER BY activities.created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 17:40:29', "perishable_token" = 'LltpP5ISyK3Ol9pKqKm', "last_request_at" = '2010-11-28 17:40:29' WHERE "id" = 1[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;35;1mRole Load (1.2ms)[0m   [0mSELECT * FROM "roles" [0m
+  [4;36;1mUser Load (2.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered activities/_activity (424.5ms)
+Rendered shared/_box (1.2ms)
+Rendered shared/_box (0.9ms)
+Rendered shared/_footer_content (436.6ms)
+Completed in 1062ms (View: 696, DB: 9) | 200 OK [http://localhost/base/footer_content]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-28 12:41:05) [GET]
+
+ActionController::RoutingError (No route matches "/materia/show" with {:method=>:get}):
+  /usr/lib/ruby/1.8/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:441:in `recognize'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:436:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:48:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:14:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-28 12:41:10) [GET]
+
+ActionController::RoutingError (No route matches "/materias/show" with {:method=>:get}):
+  /usr/lib/ruby/1.8/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:441:in `recognize'
+  /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:436:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+  /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+  /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+  /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+  /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+  /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+  /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:48:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/1.8/rack/handler/webrick.rb:14:in `run'
+
+Rendering rescues/layout (not_found)
+Loading routes from /home/alejandro/universidad/proyecto2/directorio/vendor/plugins/community_engine/config/desert_routes.rb.
+Loading routes from /home/alejandro/universidad/proyecto2/directorio/vendor/plugins/community_engine/config/desert_routes.rb.
+
+
+Processing MateriasController#show (for 127.0.0.1 at 2010-11-28 12:43:22) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+Rendering template within layouts/application
+Rendering materias/show
+Rendered shared/_scripts_and_styles (29.5ms)
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 17:43:24', "perishable_token" = 'F74aCx19oElQzMGFuDyW', "last_request_at" = '2010-11-28 17:43:23' WHERE "id" = 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (56.0ms)
+  [4;35;1mSQL (1.6ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (1492.1ms)
+Rendered shared/_messages (4.5ms)
+  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 2103ms (View: 2084, DB: 5) | 200 OK [http://localhost/materias/show]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-28 12:43:31) [GET]
+  Parameters: {"id"=>"materias"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('materias')) AND (users.activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:find_user] rendered_or_redirected.
+Completed in 6ms (DB: 1) | 302 Found [http://localhost/materias]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-28 12:43:33) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 17:43:33', "perishable_token" = '5JtFz2p6hFlXOUUfdoh', "last_request_at" = '2010-11-28 17:43:33' WHERE "id" = 1[0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+Redirected to http://localhost:3000/alejopelaez
+Completed in 563ms (DB: 2) | 302 Found [http://localhost/login]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-28 12:43:36) [GET]
+  Parameters: {"id"=>"alejopelaez"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_slug" IN ('alejopelaez')) AND (users.activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 17:43:36', "perishable_token" = 'ZyZLHZA5BLI91OpfjXg9', "last_request_at" = '2010-11-28 17:43:36' WHERE "id" = 1[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "friendships" WHERE ("friendships".user_id = 1 AND (friendship_status_id = 2)) [0m
+  [4;35;1mFriendship Load (0.6ms)[0m   [0mSELECT * FROM "friendships" WHERE ("friendships".user_id = 1 AND (friendship_status_id = 2)) LIMIT 5[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "friendships" WHERE ("friendships".user_id = 1 AND (initiator = 'f' AND friendship_status_id = 1)) [0m
+  [4;35;1mComment Load (3.6ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 1 AND "comments".commentable_type = 'User') ORDER BY created_at DESC LIMIT 10[0m
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM "comments" WHERE (recipient_id = 1 AND commentable_type = 'Photo') ORDER BY created_at DESC[0m
+  [4;35;1mComment Load (0.7ms)[0m   [0mSELECT * FROM "comments" WHERE (user_id = 1) ORDER BY created_at DESC LIMIT 5[0m
+  [4;36;1mPost Load (0.8ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 1) AND (published_as = 'live') ORDER BY published_at DESC, published_at desc LIMIT 2[0m
+  [4;35;1mClipping Load (0.6ms)[0m   [0mSELECT * FROM "clippings" WHERE ("clippings".user_id = 1) ORDER BY created_at desc LIMIT 5[0m
+  [4;36;1mPhoto Load (1.4ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos".user_id = 1) ORDER BY created_at desc LIMIT 5[0m
+  [4;35;1mActivity Load (0.6ms)[0m   [0mSELECT * FROM "activities" WHERE (activities.user_id in (1)) ORDER BY activities.created_at DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "offerings" WHERE ("offerings".user_id = 1) [0m
+Rendered shared/_box (4.2ms)
+Rendered users/_profile_user_info_sidebar (266.2ms)
+Rendered shared/_box (0.6ms)
+Rendered shared/_box (0.6ms)
+Rendered shared/_box (0.4ms)
+Rendered comments/_comment_form (31.8ms)
+Rendered shared/_box (0.7ms)
+Rendered shared/_scripts_and_styles (5.9ms)
+Rendered shared/_user_menu (2.9ms)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (219.1ms)
+Rendered shared/_messages (2.1ms)
+  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1892ms (View: 1125, DB: 17) | 200 OK [http://localhost/alejopelaez]
+
+
+Processing BaseController#footer_content (for 127.0.0.1 at 2010-11-28 12:43:41) [POST]
+  Parameters: {"authenticity_token"=>"qgr8NF3cBsBI9FWp6qtP8KNCrdawqwtDHur6ehmZIos="}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mClipping Load (0.4ms)[0m   [0;1mSELECT * FROM "clippings" WHERE (created_at > '2010-11-21 17:43:41') ORDER BY created_at DESC LIMIT 10[0m
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM "photos" WHERE (photos.created_at > '2010-11-21 17:43:40' AND photos.parent_id IS NULL) ORDER BY photos.created_at DESC LIMIT 10[0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE (created_at > '2010-11-14 17:43:41') ORDER BY created_at DESC LIMIT 13[0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT tags.id, tags.name, count(*) AS count 
+ FROM taggings, tags 
+ WHERE tags.id = taggings.tag_id GROUP BY tags.id, tags.name ORDER BY count DESC LIMIT 30[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(activities.id) AS count_activities_id FROM "activities" LEFT JOIN users ON users.id = activities.user_id WHERE (users.activated_at IS NOT NULL) [0m
+  [4;35;1mActivity Load (0.6ms)[0m   [0mSELECT activities.* FROM "activities" LEFT JOIN users ON users.id = activities.user_id WHERE (users.activated_at IS NOT NULL) ORDER BY activities.created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 17:43:42', "perishable_token" = 'K26Ppa6veHyp8XZVNSLc', "last_request_at" = '2010-11-28 17:43:42' WHERE "id" = 1[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" [0m
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered activities/_activity (689.8ms)
+Rendered shared/_box (18.2ms)
+Rendered shared/_box (0.5ms)
+Rendered shared/_footer_content (765.4ms)
+Completed in 1485ms (View: 1099, DB: 7) | 200 OK [http://localhost/base/footer_content]
+
+
+Processing MateriasController#index (for 127.0.0.1 at 2010-11-28 12:43:50) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+Rendering template within layouts/application
+Rendering materias/index
+Rendered shared/_scripts_and_styles (5.4ms)
+  [4;35;1mUser Load (2.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 17:43:50', "perishable_token" = 'tusGMgdZbssznQcxr461', "last_request_at" = '2010-11-28 17:43:50' WHERE "id" = 1[0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'User')) [0m
+  [4;36;1mRole Load (1.7ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (83.9ms)
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (882.4ms)
+Rendered shared/_messages (0.3ms)
+  [4;35;1mPage Load (1.1ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1238ms (View: 1218, DB: 7) | 200 OK [http://localhost/materias/index]
+Loading routes from /home/alejandro/universidad/proyecto2/directorio/vendor/plugins/community_engine/config/desert_routes.rb.
+Loading routes from /home/alejandro/universidad/proyecto2/directorio/vendor/plugins/community_engine/config/desert_routes.rb.
+Loading routes from /home/alejandro/universidad/proyecto2/directorio/vendor/plugins/community_engine/config/desert_routes.rb.
+Loading routes from /home/alejandro/universidad/proyecto2/directorio/vendor/plugins/community_engine/config/desert_routes.rb.
+  [4;36;1mSQL (5.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CommunityEngineToVersion73 (20101128171548)
+Migrating to CreateMaterias (20101128174844)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "materias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "code" varchar(255), "program" varchar(255), "credits" integer, "umes" integer, "description" varchar(255), "professor" varchar(255), "homepage" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101128174844')[0m
+  [4;35;1mSQL (4.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (6.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mPRAGMA index_list("activities")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_info('index_activities_on_user_id')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_info('index_activities_on_created_at')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("ads")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("albums")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("assets")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("categories")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("choices")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mPRAGMA index_list("clippings")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_info('index_clippings_on_created_at')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_info('index_comments_on_commentable_id')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_info('index_comments_on_commentable_type')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_info('index_comments_on_created_at')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_info('index_comments_on_recipient_id')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_info('fk_comments_user')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("contests")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("countries")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("events")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("favorites")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mPRAGMA index_info('fk_favorites_user')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("forums")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("friendship_statuses")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("friendships")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_friendships_on_friendship_status_id')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_friendships_on_user_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("homepage_features")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("invitations")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("materias")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("messages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("metro_areas")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("moderatorships")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_moderatorships_on_forum_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("monitorships")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("offerings")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("photos")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_photos_on_created_at')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_photos_on_parent_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("plugin_schema_migrations")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("polls")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_polls_on_post_id')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_polls_on_created_at')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_list("posts")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_posts_on_user_id')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_posts_on_published_as')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_posts_on_published_at')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_posts_on_category_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("roles")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("rsvps")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("sb_posts")[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mPRAGMA index_info('index_sb_posts_on_user_id')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('index_sb_posts_on_forum_id')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_sessid')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("skills")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("states")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mPRAGMA index_list("taggings")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('index_taggings_on_taggable_id_and_taggable_type')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_taggings_on_taggable_id')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mPRAGMA index_info('index_taggings_on_taggable_type')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_taggings_on_tag_id')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("tags")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_tags_on_name')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("topics")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_topics_on_forum_id_and_replied_at')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('index_topics_on_sticky_and_replied_at')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_topics_on_forum_id')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_last_request_at')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_persistence_token')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_created_at')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_login_slug')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_vendor')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_activated_at')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_featured_writer')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_avatar_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+Loading routes from /home/alejandro/universidad/proyecto2/directorio/vendor/plugins/community_engine/config/desert_routes.rb.
+Loading routes from /home/alejandro/universidad/proyecto2/directorio/vendor/plugins/community_engine/config/desert_routes.rb.
+  [4;36;1mMateria Create (1.5ms)[0m   [0;1mINSERT INTO "materias" ("name", "created_at", "code", "updated_at", "id", "professor", "homepage", "program", "credits", "umes", "description") VALUES('test', '2010-11-28 17:51:44', 'st0022', '2010-11-28 17:51:44', 1, 'nombre_del_profesor', 'www.test.com', 'una_pag.com', 4, 3, 'Esta es una materia de ejemplo')[0m
+  [4;35;1mMateria Load (1.4ms)[0m   [0mSELECT * FROM "materias" [0m
+  [4;36;1mMateria Create (0.9ms)[0m   [0;1mINSERT INTO "materias" ("name", "created_at", "code", "updated_at", "id", "professor", "homepage", "program", "credits", "umes", "description") VALUES('test2', '2010-11-28 18:03:42', 'cb042', '2010-11-28 18:03:42', 2, 'Alguien', 'www.ateria.com', 'url.com/materia.pdf', 2, 3, 'Just another subject')[0m
+  [4;35;1mMateria Load (2.1ms)[0m   [0mSELECT * FROM "materias" [0m
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:08:49) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (3.7ms)[0m   [0;1mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+
+ActionView::TemplateError (undefined local variable or method `n' for #<ActionView::Base:0xb696ec98>) on line #4 of app/views/materias/list.html.erb:
+1: <h1>Materias</h1>
+2: <% @materias.each do |m| %>
+3:   <h3><%= m.name %></h3>
+4:   <%= n.code %></br>
+5:   <%= n.description %></br>
+6:   <%= n.program %></br>
+7:   <%= n.professor %></br>
+
+    app/views/materias/list.html.erb:4
+    app/views/materias/list.html.erb:2:in `each'
+    app/views/materias/list.html.erb:2
+    /usr/lib/ruby/1.8/action_view/renderable.rb:34:in `send'
+    /usr/lib/ruby/1.8/action_view/renderable.rb:34:in `render'
+    /usr/lib/ruby/1.8/action_view/base.rb:306:in `with_template'
+    /usr/lib/ruby/1.8/action_view/renderable.rb:30:in `render'
+    /usr/lib/ruby/1.8/action_view/template.rb:205:in `render_template'
+    /usr/lib/ruby/1.8/action_view/base.rb:265:in `render_without_haml'
+    haml (3.0.24) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /usr/lib/ruby/1.8/action_view/base.rb:348:in `_render_with_layout'
+    /usr/lib/ruby/1.8/action_view/base.rb:262:in `render_without_haml'
+    haml (3.0.24) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1250:in `render_for_file'
+    /usr/lib/ruby/1.8/action_controller/base.rb:945:in `render_without_benchmark'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1326:in `default_render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1332:in `perform_action_without_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:617:in `call_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:638:in `run_before_filters'
+    /usr/lib/ruby/1.8/active_support/callbacks.rb:178:in `send'
+    /usr/lib/ruby/1.8/active_support/callbacks.rb:178:in `evaluate_method'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:186:in `call'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:635:in `run_before_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:615:in `call_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /usr/lib/ruby/1.8/action_controller/flash.rb:146:in `perform_action'
+    /usr/lib/ruby/1.8/action_controller/base.rb:532:in `send'
+    /usr/lib/ruby/1.8/action_controller/base.rb:532:in `process_without_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:606:in `process'
+    /usr/lib/ruby/1.8/action_controller/base.rb:391:in `process'
+    /usr/lib/ruby/1.8/action_controller/base.rb:386:in `call'
+    /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:437:in `call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+    /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+    /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+    /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+    /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+    /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/1.8/rack/handler/webrick.rb:48:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/1.8/rack/handler/webrick.rb:14:in `run'
+
+Rendered rescues/_trace (57.2ms)
+Rendered rescues/_request_and_response (2.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:09:05) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mMateria Load (3.9ms)[0m   [0mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (32.8ms)
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 18:09:07', "perishable_token" = 'nytzZ2pQNhc3fz9SGEh', "last_request_at" = '2010-11-28 18:09:07' WHERE "id" = 1[0m
+  [4;36;1mRole Load (1.2ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (117.3ms)
+  [4;35;1mSQL (1.6ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (1766.3ms)
+Rendered shared/_messages (4.9ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 2374ms (View: 2209, DB: 10) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:09:20) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (6.7ms)[0m   [0;1mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (3.9ms)
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 18:09:21', "perishable_token" = 'cZF30s5H8oLAYTD4TIfj', "last_request_at" = '2010-11-28 18:09:21' WHERE "id" = 1[0m
+  [4;35;1mRole Load (1.3ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (88.7ms)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (1105.7ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1629ms (View: 1439, DB: 12) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:09:47) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mMateria Load (5.7ms)[0m   [0mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (4.7ms)
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 18:09:48', "perishable_token" = 'GGbRX2zO3q7zQhJFID', "last_request_at" = '2010-11-28 18:09:48' WHERE "id" = 1[0m
+  [4;36;1mRole Load (2.0ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (55.4ms)
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (1134.9ms)
+Rendered shared/_messages (0.3ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1666ms (View: 1472, DB: 12) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:09:57) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (3.6ms)[0m   [0;1mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (4.5ms)
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 18:09:58', "perishable_token" = 'yf14UxLKcJWgS1tLAPzC', "last_request_at" = '2010-11-28 18:09:58' WHERE "id" = 1[0m
+  [4;35;1mRole Load (3.4ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (88.8ms)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (1194.0ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (1.1ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1725ms (View: 1530, DB: 11) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:10:21) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mMateria Load (3.7ms)[0m   [0mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (4.6ms)
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 18:10:22', "perishable_token" = 'OURMQrQqNFmtJYhdZ0a', "last_request_at" = '2010-11-28 18:10:22' WHERE "id" = 1[0m
+  [4;36;1mRole Load (1.1ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (78.0ms)
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (1109.1ms)
+Rendered shared/_messages (0.3ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1635ms (View: 1445, DB: 9) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:10:46) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (3.7ms)[0m   [0;1mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (4.5ms)
+  [4;35;1mUser Load (1.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 18:10:47', "perishable_token" = 'zQvJZiZk4Xe4aXe2COn', "last_request_at" = '2010-11-28 18:10:47' WHERE "id" = 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (40.2ms)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.8ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (1145.1ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1671ms (View: 1481, DB: 9) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:11:08) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mMateria Load (6.7ms)[0m   [0mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (4.3ms)
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 18:11:09', "perishable_token" = 'KA7sYNua0hRLftC0S4je', "last_request_at" = '2010-11-28 18:11:09' WHERE "id" = 1[0m
+  [4;36;1mRole Load (4.4ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (64.8ms)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (1133.2ms)
+Rendered shared/_messages (0.3ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1661ms (View: 1463, DB: 15) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:14:09) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (3.6ms)[0m   [0;1mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (4.1ms)
+  [4;35;1mUser Load (4.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 18:14:10', "perishable_token" = 'o0oWEwbS5NjbfuNvz80V', "last_request_at" = '2010-11-28 18:14:10' WHERE "id" = 1[0m
+  [4;35;1mRole Load (1.1ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (68.0ms)
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (1117.6ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1633ms (View: 1445, DB: 12) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:14:56) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mMateria Load (3.7ms)[0m   [0mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (4.1ms)
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 18:14:57', "perishable_token" = 'IT21t9yV1MDv9UPucmwU', "last_request_at" = '2010-11-28 18:14:57' WHERE "id" = 1[0m
+  [4;36;1mRole Load (1.2ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (66.5ms)
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (1156.4ms)
+Rendered shared/_messages (0.3ms)
+  [4;35;1mPage Load (2.8ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1760ms (View: 1574, DB: 11) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:15:13) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (3.6ms)[0m   [0;1mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (7.2ms)
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 18:15:14', "perishable_token" = 'zXrmCFoPakEeYTEaRCY', "last_request_at" = '2010-11-28 18:15:14' WHERE "id" = 1[0m
+  [4;35;1mRole Load (1.2ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (81.7ms)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (1139.5ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1663ms (View: 1475, DB: 9) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:16:16) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mMateria Load (3.6ms)[0m   [0mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (4.0ms)
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 18:16:16', "perishable_token" = 'ndlLelhXY4Y1s3COVb', "last_request_at" = '2010-11-28 18:16:16' WHERE "id" = 1[0m
+  [4;36;1mRole Load (1.2ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (50.3ms)
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (1131.8ms)
+Rendered shared/_messages (0.3ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1515ms (View: 1459, DB: 9) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:16:25) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (3.8ms)[0m   [0;1mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (5.2ms)
+  [4;35;1mUser Load (2.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 18:16:26', "perishable_token" = 'CHjSQnUZKsJj5VhRkRLS', "last_request_at" = '2010-11-28 18:16:26' WHERE "id" = 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (232.3ms)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (1095.3ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1481ms (View: 1429, DB: 9) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:17:25) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mMateria Load (3.7ms)[0m   [0mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (3.8ms)
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 18:17:26', "perishable_token" = 'axDaxUzWicOzFIkLIvWi', "last_request_at" = '2010-11-28 18:17:26' WHERE "id" = 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (287.6ms)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (1146.1ms)
+Rendered shared/_messages (0.3ms)
+  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1527ms (View: 1475, DB: 8) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#show (for 127.0.0.1 at 2010-11-28 13:17:30) [GET]
+  Parameters: {"id"=>"1"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (0.7ms)[0m   [0;1mSELECT * FROM "materias" WHERE ("materias"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering materias/show
+Rendered shared/_scripts_and_styles (4.5ms)
+  [4;35;1mUser Load (2.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 18:17:31', "perishable_token" = 'nEaZGfH9lEi6XeuqWH26', "last_request_at" = '2010-11-28 18:17:31' WHERE "id" = 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (234.6ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (1103.2ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1515ms (View: 1461, DB: 6) | 200 OK [http://localhost/materias/show/1]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:18:06) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mMateria Load (6.5ms)[0m   [0mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (5.0ms)
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 18:18:07', "perishable_token" = 'Vi9TeKSmcSS06S60jOG', "last_request_at" = '2010-11-28 18:18:07' WHERE "id" = 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (236.6ms)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (1091.2ms)
+Rendered shared/_messages (0.3ms)
+  [4;35;1mPage Load (1.0ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1470ms (View: 1418, DB: 11) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:18:33) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (3.7ms)[0m   [0;1mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (8.1ms)
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 18:18:34', "perishable_token" = 'NfcUiMYn3mDahnFTz5n', "last_request_at" = '2010-11-28 18:18:34' WHERE "id" = 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (233.1ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (1110.0ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1502ms (View: 1449, DB: 8) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:18:55) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mMateria Load (4.0ms)[0m   [0mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (3.9ms)
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 18:18:56', "perishable_token" = '3k4fCdLSCkvN8CFzCOmM', "last_request_at" = '2010-11-28 18:18:56' WHERE "id" = 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (228.7ms)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (1110.8ms)
+Rendered shared/_messages (0.3ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1491ms (View: 1440, DB: 8) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:21:39) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (3.6ms)[0m   [0;1mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (4.0ms)
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 18:21:40', "perishable_token" = 'Ju9jBbHNS8cS2Wg9ogg8', "last_request_at" = '2010-11-28 18:21:40' WHERE "id" = 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (274.6ms)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (1149.6ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1524ms (View: 1472, DB: 8) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#show (for 127.0.0.1 at 2010-11-28 13:21:43) [GET]
+  Parameters: {"id"=>"1"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mMateria Load (1.1ms)[0m   [0mSELECT * FROM "materias" WHERE ("materias"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering materias/show
+
+ActionView::TemplateError (undefined local variable or method `m' for #<ActionView::Base:0xb6927b68>) on line #2 of app/views/materias/show.html.erb:
+1: <h1>Materias#show</h1>
+2: <strong><%= m.name %></strong><br/>
+3: codigo: <%= m.code %><br/>
+4: creditos: <%= m.credits %><br/>
+5: umes: <%= m.umes %><br/>
+
+    app/views/materias/show.html.erb:2
+    /usr/lib/ruby/1.8/action_view/renderable.rb:34:in `send'
+    /usr/lib/ruby/1.8/action_view/renderable.rb:34:in `render'
+    /usr/lib/ruby/1.8/action_view/base.rb:306:in `with_template'
+    /usr/lib/ruby/1.8/action_view/renderable.rb:30:in `render'
+    /usr/lib/ruby/1.8/action_view/template.rb:205:in `render_template'
+    /usr/lib/ruby/1.8/action_view/base.rb:265:in `render_without_haml'
+    haml (3.0.24) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /usr/lib/ruby/1.8/action_view/base.rb:348:in `_render_with_layout'
+    /usr/lib/ruby/1.8/action_view/base.rb:262:in `render_without_haml'
+    haml (3.0.24) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1250:in `render_for_file'
+    /usr/lib/ruby/1.8/action_controller/base.rb:945:in `render_without_benchmark'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1326:in `default_render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1332:in `perform_action_without_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:617:in `call_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:638:in `run_before_filters'
+    /usr/lib/ruby/1.8/active_support/callbacks.rb:178:in `send'
+    /usr/lib/ruby/1.8/active_support/callbacks.rb:178:in `evaluate_method'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:186:in `call'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:635:in `run_before_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:615:in `call_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /usr/lib/ruby/1.8/action_controller/flash.rb:146:in `perform_action'
+    /usr/lib/ruby/1.8/action_controller/base.rb:532:in `send'
+    /usr/lib/ruby/1.8/action_controller/base.rb:532:in `process_without_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:606:in `process'
+    /usr/lib/ruby/1.8/action_controller/base.rb:391:in `process'
+    /usr/lib/ruby/1.8/action_controller/base.rb:386:in `call'
+    /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:437:in `call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+    /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+    /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+    /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+    /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+    /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/1.8/rack/handler/webrick.rb:48:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/1.8/rack/handler/webrick.rb:14:in `run'
+
+Rendered rescues/_trace (261.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:22:09) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (4.0ms)[0m   [0;1mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (3.9ms)
+  [4;35;1mUser Load (1.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 18:22:10', "perishable_token" = '2NTdx6l23IEdWPqExZAQ', "last_request_at" = '2010-11-28 18:22:10' WHERE "id" = 1[0m
+  [4;35;1mRole Load (0.8ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (302.6ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (1364.4ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1605ms (View: 1554, DB: 9) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#show (for 127.0.0.1 at 2010-11-28 13:22:13) [GET]
+  Parameters: {"id"=>"1"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mMateria Load (0.7ms)[0m   [0mSELECT * FROM "materias" WHERE ("materias"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering materias/show
+
+ActionView::TemplateError (undefined local variable or method `m' for #<ActionView::Base:0xb68248d8>) on line #8 of app/views/materias/show.html.erb:
+5: umes: <%= @materia.umes %><br/>
+6: profesor: <%= @materia.professor %><br/>
+7: descipción: <%= @materia.description %><br/>
+8: programa: <%= link_to "http://#{m.description}" %><br/>
+9: página de la materia: <%= "http://#{m.description}" %><br/>
+
+    app/views/materias/show.html.erb:8
+    /usr/lib/ruby/1.8/action_view/renderable.rb:34:in `send'
+    /usr/lib/ruby/1.8/action_view/renderable.rb:34:in `render'
+    /usr/lib/ruby/1.8/action_view/base.rb:306:in `with_template'
+    /usr/lib/ruby/1.8/action_view/renderable.rb:30:in `render'
+    /usr/lib/ruby/1.8/action_view/template.rb:205:in `render_template'
+    /usr/lib/ruby/1.8/action_view/base.rb:265:in `render_without_haml'
+    haml (3.0.24) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /usr/lib/ruby/1.8/action_view/base.rb:348:in `_render_with_layout'
+    /usr/lib/ruby/1.8/action_view/base.rb:262:in `render_without_haml'
+    haml (3.0.24) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1250:in `render_for_file'
+    /usr/lib/ruby/1.8/action_controller/base.rb:945:in `render_without_benchmark'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1326:in `default_render'
+    /usr/lib/ruby/1.8/action_controller/base.rb:1332:in `perform_action_without_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:617:in `call_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:638:in `run_before_filters'
+    /usr/lib/ruby/1.8/active_support/callbacks.rb:178:in `send'
+    /usr/lib/ruby/1.8/active_support/callbacks.rb:178:in `evaluate_method'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:186:in `call'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:635:in `run_before_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:615:in `call_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/action_controller/rescue.rb:160:in `perform_action_without_flash'
+    /usr/lib/ruby/1.8/action_controller/flash.rb:146:in `perform_action'
+    /usr/lib/ruby/1.8/action_controller/base.rb:532:in `send'
+    /usr/lib/ruby/1.8/action_controller/base.rb:532:in `process_without_filters'
+    /usr/lib/ruby/1.8/action_controller/filters.rb:606:in `process'
+    /usr/lib/ruby/1.8/action_controller/base.rb:391:in `process'
+    /usr/lib/ruby/1.8/action_controller/base.rb:386:in `call'
+    /usr/lib/ruby/1.8/action_controller/routing/route_set.rb:437:in `call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:87:in `dispatch'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:121:in `_call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:29:in `call'
+    /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/1.8/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/1.8/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    haml (3.0.24) lib/sass/plugin/rack.rb:41:in `call'
+    /usr/lib/ruby/1.8/action_controller/string_coercion.rb:25:in `call'
+    /usr/lib/ruby/1.8/rack/head.rb:9:in `call'
+    /usr/lib/ruby/1.8/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/1.8/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/1.8/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/1.8/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/1.8/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib/ruby/1.8/action_controller/reloader.rb:34:in `run'
+    /usr/lib/ruby/1.8/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:47:in `call'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `each'
+    /usr/lib/ruby/1.8/rack/urlmap.rb:41:in `call'
+    /usr/lib/ruby/1.8/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/1.8/rack/handler/webrick.rb:48:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/1.8/rack/handler/webrick.rb:14:in `run'
+
+Rendered rescues/_trace (296.6ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:22:28) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (3.9ms)[0m   [0;1mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (4.3ms)
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 18:22:29', "perishable_token" = 'C2pXuoVRjx0PQ1hsmvvP', "last_request_at" = '2010-11-28 18:22:29' WHERE "id" = 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (211.1ms)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (1.2ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (1168.9ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1630ms (View: 1577, DB: 9) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#show (for 127.0.0.1 at 2010-11-28 13:22:31) [GET]
+  Parameters: {"id"=>"1"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mMateria Load (0.7ms)[0m   [0mSELECT * FROM "materias" WHERE ("materias"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering materias/show
+Rendered shared/_scripts_and_styles (4.2ms)
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 18:22:31', "perishable_token" = '4BA4WgQFCC9Z7af7s68', "last_request_at" = '2010-11-28 18:22:31' WHERE "id" = 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (35.4ms)
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (1115.3ms)
+Rendered shared/_messages (0.3ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1503ms (View: 1447, DB: 5) | 200 OK [http://localhost/materias/show/1]
+
+
+Processing MateriasController#show (for 127.0.0.1 at 2010-11-28 13:23:02) [GET]
+  Parameters: {"id"=>"1"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (0.7ms)[0m   [0;1mSELECT * FROM "materias" WHERE ("materias"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering materias/show
+Rendered shared/_scripts_and_styles (4.6ms)
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 18:23:03', "perishable_token" = 'nfSRj6HOMcnk2UDwmle', "last_request_at" = '2010-11-28 18:23:03' WHERE "id" = 1[0m
+  [4;35;1mRole Load (1.1ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (81.0ms)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (1166.1ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (1.0ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1686ms (View: 1488, DB: 6) | 200 OK [http://localhost/materias/show/1]
+
+
+Processing MateriasController#show (for 127.0.0.1 at 2010-11-28 13:23:39) [GET]
+  Parameters: {"id"=>"1"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mMateria Load (3.3ms)[0m   [0mSELECT * FROM "materias" WHERE ("materias"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering materias/show
+Rendered shared/_scripts_and_styles (4.6ms)
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 18:23:40', "perishable_token" = '1XIttg6IOMFHxGBPqua', "last_request_at" = '2010-11-28 18:23:40' WHERE "id" = 1[0m
+  [4;36;1mRole Load (1.1ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (83.6ms)
+  [4;35;1mSQL (1.5ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (1151.9ms)
+Rendered shared/_messages (0.3ms)
+  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1680ms (View: 1483, DB: 9) | 200 OK [http://localhost/materias/show/1]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:23:43) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (3.7ms)[0m   [0;1mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (4.4ms)
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 18:23:44', "perishable_token" = '8MlV0s4mXJl3Lysr24Ao', "last_request_at" = '2010-11-28 18:23:44' WHERE "id" = 1[0m
+  [4;35;1mRole Load (1.2ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (85.3ms)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (1271.4ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1776ms (View: 1589, DB: 9) | 200 OK [http://localhost/materias/list]
+
+
+Processing MateriasController#show (for 127.0.0.1 at 2010-11-28 13:23:47) [GET]
+  Parameters: {"id"=>"2"}
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;35;1mMateria Load (0.7ms)[0m   [0mSELECT * FROM "materias" WHERE ("materias"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering materias/show
+Rendered shared/_scripts_and_styles (5.4ms)
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-11-28 18:23:48', "perishable_token" = 'mdVq8QBzChjnb8tsk5SL', "last_request_at" = '2010-11-28 18:23:48' WHERE "id" = 1[0m
+  [4;36;1mRole Load (1.1ms)[0m   [0;1mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (80.8ms)
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" [0m
+Rendered shared/_header (1097.9ms)
+Rendered shared/_messages (0.3ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1616ms (View: 1427, DB: 6) | 200 OK [http://localhost/materias/show/2]
+
+
+Processing MateriasController#list (for 127.0.0.1 at 2010-11-28 13:23:59) [GET]
+[I18n] loading locale: en from config
+[I18n] Locale set to en
+  [4;36;1mMateria Load (8.6ms)[0m   [0;1mSELECT * FROM "materias" [0m
+Rendering template within layouts/application
+Rendering materias/list
+Rendered shared/_scripts_and_styles (6.9ms)
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-11-28 18:24:00', "perishable_token" = 'GEdNtEMjFAuYTJ51jKQ7', "last_request_at" = '2010-11-28 18:24:00' WHERE "id" = 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" [0m
+Rendered shared/_user_menu (36.9ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE (recipient_id = 1 AND recipient_deleted = 'f' AND read_at IS NULL) [0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" [0m
+Rendered shared/_header (1247.0ms)
+Rendered shared/_messages (0.3ms)
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE (published_as = 'live') [0m
+Completed in 1805ms (View: 1581, DB: 13) | 200 OK [http://localhost/materias/list]
