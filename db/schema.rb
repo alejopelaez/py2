@@ -193,6 +193,19 @@ ActiveRecord::Schema.define(:version => 20101128220447) do
     t.datetime "created_at"
   end
 
+  create_table "materias", :force => true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.string   "program"
+    t.integer  "credits"
+    t.integer  "umes"
+    t.string   "description"
+    t.string   "professor"
+    t.string   "homepage"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "messages", :force => true do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"

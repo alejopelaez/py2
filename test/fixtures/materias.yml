@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  code: MyString
+  program: MyString
+  credits: 1
+  umes: 1
+  description: MyString
+  professor: MyString
+  homepage: MyString
+
+two:
+  name: MyString
+  code: MyString
+  program: MyString
+  credits: 1
+  umes: 1
+  description: MyString
+  professor: MyString
+  homepage: MyString
